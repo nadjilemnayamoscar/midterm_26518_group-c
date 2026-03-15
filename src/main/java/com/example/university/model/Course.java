@@ -30,7 +30,7 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Enrollment> enrollments;
 
-    // Constructors
+
     public Course() {}
 
     public Course(String courseCode, String courseName, Integer credits, String instructor) {
@@ -40,7 +40,7 @@ public class Course {
         this.instructor = instructor;
     }
 
-    // Getters and Setters
+  
     public Long getId() {
         return id;
     }

@@ -15,20 +15,19 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     
-    // Point 7: existBy() method
+   
     boolean existsByEmail(String email);
     
     Optional<User> findByEmail(String email);
     
-    // Point 8: Get users by province code
-    @Query("SELECT u FROM User u WHERE u.village.parent.parent.parent.parent.code = :provinceCode")
+        @Query("SELECT u FROM User u WHERE u.village.parent.parent.parent.parent.code = :provinceCode")
     List<User> findByProvinceCode(@Param("provinceCode") String provinceCode);
     
-    // Point 8: Get users by province name
+   
     @Query("SELECT u FROM User u WHERE u.village.parent.parent.parent.parent.name = :provinceName")
     List<User> findByProvinceName(@Param("provinceName") String provinceName);
     
-    // Point 3: Pagination
+    
     Page<User> findAll(Pageable pageable);
     
     List<User> findAllByOrderByLastNameAsc();

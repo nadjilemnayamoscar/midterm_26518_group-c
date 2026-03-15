@@ -31,7 +31,6 @@ public class Enrollment {
     @Column(name = "status")
     private String status;
 
-    // Constructors
     public Enrollment() {
         this.enrollmentDate = LocalDateTime.now();
         this.status = "ENROLLED";
@@ -44,7 +43,7 @@ public class Enrollment {
         this.status = "ENROLLED";
     }
 
-    // Getters and Setters
+   
     public Long getId() {
         return id;
     }
